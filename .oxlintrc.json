@@ -1,0 +1,172 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["vue", "typescript", "unicorn", "oxc", "import", "node", "promise", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "restriction": "error",
+    "pedantic": "error",
+    "style": "error",
+    "perf": "error"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2024": true
+  },
+  "rules": {
+    // === Core ===
+    "no-console": "error",
+    "no-debugger": "error",
+    "no-alert": "error",
+    "eqeqeq": ["error", "always"],
+    "prefer-const": ["error", { "destructuring": "all" }],
+    "no-var": "error",
+    "no-implicit-coercion": "error",
+    "no-nested-ternary": "error",
+    "no-unneeded-ternary": "error",
+    "curly": ["error", "all"],
+    "no-else-return": ["error", { "allowElseIf": false }],
+    "no-lonely-if": "error",
+    "no-useless-return": "error",
+    "no-useless-concat": "error",
+    "no-param-reassign": "error",
+    "no-return-assign": "error",
+    "no-sequences": "error",
+    "no-void": "error",
+    "prefer-template": "error",
+    "prefer-arrow-callback": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "object-shorthand": ["error", "always"],
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "no-useless-rename": "error",
+    "no-duplicate-imports": "error",
+
+    // === TypeScript ===
+    "typescript/no-explicit-any": "error",
+    "typescript/no-non-null-assertion": "error",
+    "typescript/consistent-type-definitions": ["error", "interface"],
+    "typescript/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+    ],
+    "typescript/no-import-type-side-effects": "error",
+    "typescript/array-type": ["error", { "default": "array-simple" }],
+    "typescript/consistent-type-assertions": [
+      "error",
+      { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
+    ],
+    "typescript/prefer-optional-chain": "error",
+    "typescript/prefer-nullish-coalescing": "error",
+    "typescript/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "typescript/no-floating-promises": "error",
+    "typescript/await-thenable": "error",
+    "typescript/no-misused-promises": "error",
+    "typescript/require-await": "error",
+    "typescript/return-await": ["error", "always"],
+    "typescript/prefer-ts-expect-error": "error",
+    "typescript/ban-ts-comment": ["error", { "ts-expect-error": "allow-with-description" }],
+
+    // === Vue ===
+    "vue/define-props-declaration": "error",
+    "vue/define-emits-declaration": "error",
+    "vue/define-props-destructuring": "error",
+    "vue/no-async-in-computed-properties": "error",
+    "vue/no-arrow-functions-in-watch": "error",
+    "vue/no-deprecated-destroyed-lifecycle": "error",
+    "vue/no-export-in-script-setup": "error",
+    "vue/no-import-compiler-macros": "error",
+    "vue/no-lifecycle-after-await": "error",
+    "vue/no-required-prop-with-default": "error",
+    "vue/prefer-import-from-vue": "error",
+    "vue/valid-define-emits": "error",
+    "vue/valid-define-props": "error",
+    "vue/valid-define-options": "error",
+    "vue/component-definition-name-casing": ["error", "PascalCase"],
+
+    // === Unicorn ===
+    "unicorn/prefer-module": "error",
+    "unicorn/prefer-node-protocol": "error",
+    "unicorn/prefer-top-level-await": "error",
+    "unicorn/no-array-for-each": "error",
+    "unicorn/no-array-reduce": "error",
+    "unicorn/prefer-array-flat": "error",
+    "unicorn/prefer-array-flat-map": "error",
+    "unicorn/prefer-array-some": "error",
+    "unicorn/prefer-includes": "error",
+    "unicorn/prefer-string-starts-ends-with": "error",
+    "unicorn/prefer-string-slice": "error",
+    "unicorn/prefer-string-replace-all": "error",
+    "unicorn/prefer-number-properties": "error",
+    "unicorn/prefer-modern-math-apis": "error",
+    "unicorn/prefer-optional-catch-binding": "error",
+    "unicorn/prefer-ternary": "error",
+    "unicorn/no-null": "error",
+    "unicorn/no-useless-undefined": "error",
+    "unicorn/no-useless-fallback-in-spread": "error",
+    "unicorn/no-useless-length-check": "error",
+    "unicorn/no-useless-promise-resolve-reject": "error",
+    "unicorn/no-useless-spread": "error",
+    "unicorn/no-useless-switch-case": "error",
+    "unicorn/filename-case": ["error", { "case": "kebabCase", "ignore": ["^[A-Z].*\\.vue$"] }],
+    "unicorn/no-abusive-eslint-disable": "error",
+    "unicorn/explicit-length-check": "error",
+    "unicorn/error-message": "error",
+    "unicorn/escape-case": "error",
+    "unicorn/new-for-builtins": "error",
+    "unicorn/no-instanceof-array": "error",
+    "unicorn/no-new-array": "error",
+    "unicorn/no-new-buffer": "error",
+    "unicorn/no-static-only-class": "error",
+    "unicorn/no-thenable": "error",
+    "unicorn/no-typeof-undefined": "error",
+    "unicorn/no-unreadable-array-destructuring": "error",
+    "unicorn/no-unreadable-iife": "error",
+    "unicorn/prefer-array-find": "error",
+    "unicorn/prefer-date-now": "error",
+    "unicorn/prefer-default-parameters": "error",
+    "unicorn/prefer-export-from": "error",
+    "unicorn/prefer-query-selector": "error",
+    "unicorn/prefer-reflect-apply": "error",
+    "unicorn/prefer-regexp-test": "error",
+    "unicorn/prefer-set-has": "error",
+    "unicorn/prefer-spread": "error",
+    "unicorn/prefer-string-trim-start-end": "error",
+    "unicorn/throw-new-error": "error",
+
+    // === Import ===
+    "import/no-cycle": "error",
+    "import/no-duplicates": "error",
+    "import/no-self-import": "error",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-mutable-exports": "error",
+    "import/no-named-default": "error",
+
+    // === Node / Promise ===
+    "node/no-process-env": "error",
+    "promise/prefer-await-to-then": "error",
+    "promise/prefer-await-to-callbacks": "error",
+    "promise/no-return-wrap": "error",
+    "promise/always-return": "error",
+    "promise/catch-or-return": "error",
+    "promise/no-nesting": "error",
+
+    // === Oxc ===
+    "oxc/no-accumulating-spread": "error"
+  },
+  "ignorePatterns": ["**/node_modules/**", "**/.nuxt/**", "**/dist/**"],
+  "overrides": [
+    {
+      "files": ["nuxt.config.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
+}
