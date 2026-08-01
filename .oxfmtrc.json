@@ -17,14 +17,8 @@
   "htmlWhitespaceSensitivity": "strict",
   "embeddedLanguageFormatting": "auto",
   "objectWrap": "preserve",
-
   "sortImports": {
     "enabled": true
   },
-
-  "ignorePatterns": [
-    "**/node_modules/**",
-    "**/.nuxt/**",
-    "**/dist/**",
-  ]
+  "ignorePatterns": ["**/node_modules/**", "**/.nuxt/**", "**/dist/**"]
 }
