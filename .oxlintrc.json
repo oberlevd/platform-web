@@ -42,7 +42,8 @@
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "no-useless-rename": "error",
-    "no-duplicate-imports": ["error", {"allowSeparateTypeImports": true}],
+    "no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
+    "sort-imports": "off",
 
     // === TypeScript ===
     "typescript/no-explicit-any": "error",
@@ -75,7 +76,7 @@
     // === Vue ===
     "vue/define-props-declaration": "error",
     "vue/define-emits-declaration": "error",
-    "vue/define-props-destructuring": ["error", {"destructure": "never"}],
+    "vue/define-props-destructuring": ["error", { "destructure": "never" }],
     "vue/no-async-in-computed-properties": "error",
     "vue/no-arrow-functions-in-watch": "error",
     "vue/no-deprecated-destroyed-lifecycle": "error",
@@ -168,15 +169,7 @@
   "overrides": [
     {
       "files": ["nuxt.config.ts"],
-      "rules": {
-        "sort-imports": ["error", {
-        "allowSeparatedGroups": true,
-        "ignoreCase": false,
-        "ignoreDeclarationSort": false,
-        "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-        }],
-      }
+      "rules": {}
     }
   ]
 }
