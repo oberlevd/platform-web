@@ -42,7 +42,7 @@
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "no-useless-rename": "error",
-    "no-duplicate-imports": "error",
+    "no-duplicate-imports": ["error", {"allowSeparateTypeImports": true}],
 
     // === TypeScript ===
     "typescript/no-explicit-any": "error",
@@ -75,7 +75,7 @@
     // === Vue ===
     "vue/define-props-declaration": "error",
     "vue/define-emits-declaration": "error",
-    "vue/define-props-destructuring": "error",
+    "vue/define-props-destructuring": ["error", {"destructure": "never"}],
     "vue/no-async-in-computed-properties": "error",
     "vue/no-arrow-functions-in-watch": "error",
     "vue/no-deprecated-destroyed-lifecycle": "error",
@@ -88,6 +88,7 @@
     "vue/valid-define-props": "error",
     "vue/valid-define-options": "error",
     "vue/component-definition-name-casing": ["error", "PascalCase"],
+    "vue/max-props": ["warn", { "maxProps": 10 }],
 
     // === Unicorn ===
     "unicorn/prefer-module": "error",
@@ -147,6 +148,9 @@
     "import/newline-after-import": "error",
     "import/no-mutable-exports": "error",
     "import/no-named-default": "error",
+    "import/no-default-export": "off",
+    "import/prefer-default-export": "off",
+    "import/no-named-export": "off",
 
     // === Node / Promise ===
     "node/no-process-env": "error",
@@ -165,7 +169,13 @@
     {
       "files": ["nuxt.config.ts"],
       "rules": {
-        "import/no-default-export": "off"
+        "sort-imports": ["error", {
+        "allowSeparatedGroups": true,
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }],
       }
     }
   ]
