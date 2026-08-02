@@ -10,12 +10,12 @@ const props = defineProps<{
 }>()
 
 const emits = defineEmits<{
-  (e: "update:modelValue", payload: string | number): void
+  (event: "update:modelValue", payload: string | number): void
 }>()
 
 const modelValue = useVModel(props, "modelValue", emits, {
-  passive: true,
   defaultValue: props.defaultValue,
+  passive: true,
 })
 </script>
 
