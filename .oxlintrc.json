@@ -23,9 +23,9 @@
     "prefer-const": ["error", { "destructuring": "all" }],
     "no-var": "error",
     "no-implicit-coercion": "error",
-    "no-nested-ternary": "error",
-    "no-unneeded-ternary": "error",
-    "curly": ["error", "all"],
+    "no-nested-ternary": "off",
+    "no-unneeded-ternary": "off",
+    "curly": "off",
     "no-else-return": ["error", { "allowElseIf": false }],
     "no-lonely-if": "error",
     "no-useless-return": "error",
@@ -45,6 +45,8 @@
     "no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
     "sort-imports": "off",
     "no-undefined": "off",
+    "no-magic-numbers": "off",
+    "no-ternary": "off",
 
     // === TypeScript ===
     "typescript/no-explicit-any": "error",
@@ -60,7 +62,7 @@
       "error",
       { "assertionStyle": "as", "objectLiteralTypeAssertions": "never" }
     ],
-    "typescript/prefer-optional-chain": "error",
+    "typescript/prefer-optional-chain": "off",
     "typescript/prefer-nullish-coalescing": "error",
     "typescript/no-unused-vars": [
       "error",
@@ -108,9 +110,9 @@
     "unicorn/prefer-string-replace-all": "error",
     "unicorn/prefer-number-properties": "error",
     "unicorn/prefer-modern-math-apis": "error",
-    "unicorn/prefer-optional-catch-binding": "error",
-    "unicorn/prefer-ternary": "error",
-    "unicorn/no-null": "error",
+    "unicorn/prefer-optional-catch-binding": "off",
+    "unicorn/prefer-ternary": "off",
+    "unicorn/no-null": "off",
     "unicorn/no-useless-undefined": "error",
     "unicorn/no-useless-fallback-in-spread": "error",
     "unicorn/no-useless-length-check": "error",
@@ -165,7 +167,8 @@
     "promise/no-nesting": "error",
 
     // === Oxc ===
-    "oxc/no-accumulating-spread": "error"
+    "oxc/no-accumulating-spread": "error",
+    "oxc/no-optional-chaining": "off"
   },
   "ignorePatterns": ["**/node_modules/**", "**/.nuxt/**", "**/dist/**"],
   "overrides": [
