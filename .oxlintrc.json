@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["vue", "typescript", "unicorn", "oxc", "import", "node", "promise", "vitest"],
+  "plugins": ["vue", "typescript", "unicorn", "oxc", "import", "node", "promise"],
   "categories": {
     "correctness": "error",
     "suspicious": "error",
@@ -170,11 +170,35 @@
     "oxc/no-accumulating-spread": "error",
     "oxc/no-optional-chaining": "off"
   },
-  "ignorePatterns": ["**/node_modules/**", "**/.nuxt/**", "**/dist/**"],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/.nuxt/**",
+    "**/dist/**",
+    "**/.output/**"
+  ],
   "overrides": [
     {
       "files": ["nuxt.config.ts"],
-      "rules": {}
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    },
+    {
+      "files": [
+        "**/*.{test,spec}.{ts,tsx,js,jsx}",
+        "**/tests/**/*.{ts,tsx,js,jsx}",
+        "**/__tests__/**/*.{ts,tsx,js,jsx}"
+      ],
+      "plugins": ["vitest"],
+      "rules": {
+        "vitest/require-hook": "error",
+        "vitest/expect-expect": "error",
+        "vitest/no-focused-tests": "error",
+        "vitest/no-disabled-tests": "warn",
+        "vitest/no-identical-title": "error",
+        "vitest/consistent-test-it": ["error", { "fn": "it" }],
+        "node/no-process-env": "off"
+      }
     }
   ]
 }
